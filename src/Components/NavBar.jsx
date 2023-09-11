@@ -22,7 +22,7 @@ const NavBar = () => {
               <ItemCategory isActive={false} name="Música"/>
               </li>
               <li className="nav-item">
-              <ItemCategory isActive={false} name="Peliculas"/>
+              <ItemCategory isActive={false} name="Películas"/>
               </li>
             </ul>
           </div>
