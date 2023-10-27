@@ -1,18 +1,23 @@
-import React from 'react';
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
+import { Link } from 'react-router-dom';
 
-const Carrito = ({ carrito }) => {
+const Carrito = () => {
+  const { cart, clearcart, totalquantity, total } =useContext(CartContext)
+
+  if (totalquantity === 0) {
+    return (
+      <div>
+        <h1>No hay items agregados</h1>
+          <Link to='/' className='Option'>Productos</Link>
+      </div>
+    )
+  }
+
   return (
     <div>
-      <h2>Carrito de Compras</h2>
-      <ul>
-        {carrito.map((item) => (
-          <li key={item.id}>
-            {item.descripcion} - Cantidad: {item.cantidad}
-          </li>
-        ))}
-      </ul>
+      { cart.map(p => <Cart key)}
     </div>
-  );
-};
-
+  )
+}
 export default Carrito;
